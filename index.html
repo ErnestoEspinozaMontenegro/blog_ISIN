@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Generalidades del Cloud Computing — Blog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --accent:#0f62fe; /* azul profesional */
+      --muted:#6b7280;
+      --bg:#f7fafc;
+      --card:#ffffff;
+      --radius:14px;
+      --max-width:1100px;
+      --soft-shadow: 0 6px 24px rgba(17,24,39,0.08);
+      font-family: 'Inter', system-ui, -apple-system, 'Helvetica Neue', Arial;
+      color:#0b1220;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg, #fbfdff 0%, var(--bg) 100%);}
+    .container{max-width:var(--max-width);margin:40px auto;padding:24px}
+
+    header.site-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
+    .brand{display:flex;gap:18px;align-items:center}
+    .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#6f40ff);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:20px;box-shadow:var(--soft-shadow)}
+    h1.site-title{font-size:20px;margin:0}
+    .nav{display:flex;gap:12px}
+    .nav a{padding:10px 14px;border-radius:10px;text-decoration:none;color:var(--muted);font-weight:600}
+    .nav a.primary{background:rgba(15,98,254,0.1);color:var(--accent)}
+
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:24px;align-items:center;margin-bottom:28px}
+    .hero-card{background:var(--card);border-radius:var(--radius);padding:28px;box-shadow:var(--soft-shadow)}
+    .hero-card h2{margin:0 0 10px 0;font-size:26px}
+    .hero-card p{margin:0;color:var(--muted)}
+    .hero-figure{border-radius:12px;overflow:hidden;box-shadow:var(--soft-shadow)}
+    .hero-figure img{display:block;width:100%;height:100%;object-fit:cover}
+
+    .grid{display:grid;grid-template-columns:2fr 1fr;gap:20px}
+    main.article{display:flex;flex-direction:column;gap:18px}
+    article.card{background:var(--card);padding:20px;border-radius:12px;box-shadow:var(--soft-shadow)}
+    article.card h3{margin:0 0 10px 0}
+    .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(15,98,254,0.08);color:var(--accent);font-weight:700;font-size:12px}
+
+    .list{display:grid;gap:12px}
+    .item{padding:12px;border-radius:10px;border:1px solid #eef2ff}
+    .code{background:#0b122020;padding:8px;border-radius:8px;font-family:monospace;font-size:13px;color:#071133}
+
+    aside{position:relative}
+    .toc{position:sticky;top:28px;background:var(--card);padding:18px;border-radius:12px;box-shadow:var(--soft-shadow)}
+    .toc h4{margin-top:0}
+    .tag{display:inline-block;padding:6px 10px;border-radius:999px;background:#f1f5f9;margin:4px;margin-right:6px;font-size:13px}
+
+    footer{margin-top:28px;padding:18px;text-align:center;color:var(--muted);font-size:14px}
+
+    /* responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;}
+      .grid{grid-template-columns:1fr}
+      .nav{display:none}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="logoUNAN.png" alt="logo UNAN" style="height: 10%;margin-left: 45px;margin-bottom: 20px;"/>
+    <header class="site-header">
+      <div class="brand">
+        <div class="logo">CC</div>
+        <div>
+          <h1 class="site-title">Generalidades del Cloud Computing</h1>
+          <div style="color:var(--muted);font-size:13px">Blog ejemplo — conceptos, modelos y buenas prácticas para el componente optativo de Introducción a los Servicios de Internet en la Nube.</div>
+          <div class="site-title">Profesor Ernesto Espinoza M.</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="#introduccion">Inicio</a>
+        <a href="#modelos">Modelos</a>
+        <a class="primary" href="#casos">Casos</a>
+        <a href="#recursos">Recursos</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-card">
+        <span class="badge">Conceptos clave</span>
+        <h2 id="introduccion">¿Qué es Cloud Computing?</h2>
+        <p>El Cloud Computing (o informática en la nube) es el suministro de recursos informáticos —servidores, almacenamiento, bases de datos, redes, software— a través de internet. Permite a organizaciones escalar, actuar con mayor agilidad y pagar sólo por lo que consumen.</p>
+        <div style="height:18px"></div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <div class="tag">Escalabilidad</div>
+          <div class="tag">Elasticidad</div>
+          <div class="tag">Pago por uso</div>
+          <div class="tag">Alta disponibilidad</div>
+        </div>
+      </div>
+
+      <figure class="hero-figure">
+        <img alt="nube y servidores" src="https://myrobot.asia/wp-content/uploads/2024/01/cloud-computing-la-gi3.jpeg"/>
+      </figure>
+    </section>
+
+    <div class="grid">
+      <main class="article">
+
+        <article class="card">
+          <h3>Beneficios principales</h3>
+          <ul>
+            <li><strong>Reducción de costes:</strong> se minimiza la inversión en infraestructura inicial.</li>
+            <li><strong>Escalabilidad rápida:</strong> recursos que crecen o disminuyen según la demanda.</li>
+            <li><strong>Disponibilidad y recuperación:</strong> soluciones gestionadas y replicación geográfica.</li>
+            <li><strong>Innovación más rápida:</strong> acceso a servicios avanzados (IA, análisis, serverless).</li>
+          </ul>
+        </article>
+
+        <article class="card" id="modelos">
+          <h3>Modelos de servicio: IaaS, PaaS y SaaS</h3>
+          <div class="list">
+            <div class="item">
+              <h4>IaaS — Infrastructure as a Service</h4>
+              <p>Proporciona recursos de infraestructura (máquinas virtuales, redes, almacenamiento). Ideal cuando necesitas control sobre el sistema operativo y la configuración.</p>
+            </div>
+            <div class="item">
+              <h4>PaaS — Platform as a Service</h4>
+              <p>Ofrece un entorno para desarrollar, desplegar y administrar aplicaciones sin gestionar la infraestructura subyacente.</p>
+            </div>
+            <div class="item">
+              <h4>SaaS — Software as a Service</h4>
+              <p>Aplicaciones completas entregadas por internet (correo, CRM, suites de productividad). El usuario final consume el servicio sin administrar nada infraestructural.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" id="modelos">
+          <h3>Modelos de despliegue</h3>
+          <p>Los principales modelos de despliegue son:</p>
+          <ul>
+            <li><strong>Pública:</strong> recursos compartidos, gestionados por proveedores (AWS, Azure, GCP).</li>
+            <li><strong>Privada:</strong> infraestructura dedicada a una sola organización.</li>
+            <li><strong>Híbrida:</strong> combinación de nubes públicas y privadas para equilibrio entre control y escalabilidad.</li>
+            <li><strong>Multicloud:</strong> uso de varios proveedores para evitar dependencia y distribuir riesgos.</li>
+          </ul>
+          <div style="margin-top:8px" class="code">Ejemplo de nube híbrida: usar almacenamiento en la nube pública + base de datos privada para datos sensibles.</div>
+        </article>
+
+        <article class="card">
+          <h3>Seguridad y buenas prácticas</h3>
+          <ol>
+            <li><strong>Principio de menor privilegio:</strong> cuentas y roles con permisos mínimos.</li>
+            <li><strong>Encriptación:</strong> datos en tránsito y en reposo.</li>
+            <li><strong>Gestión de identidades:</strong> MFA y rotación de claves/credenciales.</li>
+            <li><strong>Backups y pruebas de recuperación:</strong> ejercicios regulares de DR (disaster recovery).</li>
+          </ol>
+        </article>
+
+        <article class="card" id="casos">
+          <h3>Casos de uso comunes</h3>
+          <div style="display:flex;gap:12px;flex-wrap:wrap">
+            <div style="flex:1;min-width:200px">
+              <img alt="aplicaciones web" style="width:100%;border-radius:8px;display:block;margin-bottom:8px" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop&crop=entropy&s=2b1a9e8b6f94e8d8a9a1f5b3c6d2f7e3">
+              <strong>Aplicaciones web y móviles</strong>
+              <p style="margin:6px 0;color:var(--muted)">Hospedaje escalable para tráfico variable y distribución global.</p>
+            </div>
+            <div style="flex:1;min-width:200px">
+              <img alt="analitica datos" style="width:100%;border-radius:8px;display:block;margin-bottom:8px" src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=800&auto=format&fit=crop&crop=entropy&s=6f0a2b3c9c1b4a5e7d8f9b0c2a3d4e5f">
+              <strong>Big Data y analítica</strong>
+              <p style="margin:6px 0;color:var(--muted)">Procesamiento a gran escala con servicios administrados de datos.</p>
+            </div>
+            <div style="flex:1;min-width:200px">
+              <img alt="backup cloud" style="width:100%;border-radius:8px;display:block;margin-bottom:8px" src="https://images.unsplash.com/photo-1581091012184-7b3f0b746b2b?q=80&w=800&auto=format&fit=crop&crop=entropy&s=9d8a7c6b5e4f3a2b1c0d9e8f7a6b5c4d">
+              <strong>Copias de seguridad y recuperación</strong>
+              <p style="margin:6px 0;color:var(--muted)">Almacenamiento seguro y replicado geográficamente.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" id="recursos">
+          <h3>Recursos y aprendizaje</h3>
+          <p>Para profundizar, busca cursos sobre arquitecturas en la nube, seguridad cloud, y certificaciones de AWS/Azure/GCP. Aquí tienes un ejemplo de una ruta de aprendizaje básica:</p>
+          <ol>
+            <li>Fundamentos: conceptos de redes, virtualización y modelos de servicio.</li>
+            <li>Práctica: crea una cuenta gratuita en un proveedor y despliega una VM simple.</li>
+            <li>Avanzado: estudia IaC (Infrastructure as Code) con Terraform o CloudFormation.</li>
+          </ol>
+        </article>
+
+      </main>
+
+      <aside>
+        <div class="toc">
+          <h4>Indice</h4>
+          <nav style="display:flex;flex-direction:column;gap:8px">
+            <a href="#introduccion">Introducción</a>
+            <a href="#modelos">Modelos de servicio</a>
+            <a href="#casos">Casos de uso</a>
+            <a href="#recursos">Recursos</a>
+          </nav>
+          <div style="height:12px"></div>
+          <h4>Etiquetas</h4>
+          <div style="margin-top:8px">
+            <span class="tag">Cloud</span>
+            <span class="tag">Seguridad</span>
+            <span class="tag">IaaS</span>
+            <span class="tag">PaaS</span>
+            <span class="tag">SaaS</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      © 2025 — Blog de Cloud Computing • Diseño profesional y contenido de referencia. Hecho para aprender y compartir.
+    </footer>
+  </div>
+</body>
+</html>
